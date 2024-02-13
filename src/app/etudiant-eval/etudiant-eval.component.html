@@ -1,0 +1,12 @@
+<div class="etudiant-eval-fiche contains-border">
+  <p></p>
+<form #identificationForm="ngForm" (ngSubmit)="onSubmitForm(identificationForm)">
+    <label for="nomInput">Identifiez-vous!</label>
+    <input type="text" id ="nomInput" name="prenomEnseignant" [(ngModel)]="prenomEnseignant">
+    <input type="text" id ="nomInput" name="id" [(ngModel)]="id">
+    <button class="button" type="submit">OK!</button>
+    <p>You entered {{prenomEnseignant}}</p>
+</form>
+<h2>{{etudiant.id}}</h2><h2>{{etudiant.prenom |titlecase}}</h2>
+<button (click)="onClickDetails()" class="button">Go To Details</button>
+</div>

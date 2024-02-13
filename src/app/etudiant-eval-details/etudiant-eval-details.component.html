@@ -1,0 +1,21 @@
+<div class="etudiant-eval-fiche contains-border">
+      <p></p>
+    <h2>{{ etudiant.prenom |titlecase }}</h2>
+    <p>fait partie de {{ etudiant.classe }}</p>
+    <p>{{ etudiant.comment }}</p>
+    <p>Inscription le {{ etudiant.inscriDate | date }}</p>
+
+    <p>
+      <button (click)="onClick1()" class="button">Je mérite un bonus!</button>
+      <button (click)="onClick2()" class="button">Je ne mérite pas un bonus!</button>
+      note:{{ etudiant.bonus }}
+    </p>
+  
+  <div [ngSwitch]="etudiant.bonus">
+    <div *ngSwitchCase="0">Rien</div>
+    <div *ngSwitchCase="2">+0.5 à l'examen</div>
+    <div *ngSwitchCase="5">+1 à l'examen</div>
+    <div *ngSwitchDefault="">Contenu par défaut (aucun cas ne correspond)</div>
+  </div>
+  <a routerLink="/etudevals">Back To List </a>
+  </div>
